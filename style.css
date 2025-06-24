@@ -7,57 +7,66 @@
 /* ============== VARIABLES CSS PARA TEMAS =========== */
 /* =================================================== */
 
-/* :root define las variables para el tema por defecto (oscuro) */
+/* :root define las variables para el tema por defecto (oscuro, inspirado en el logo) */
 :root {
-    --bg-color: #121212;
-    --text-color: #ffffff;
-    --primary-color: #ff0000;
-    --card-bg: #1e1e1e;
-    --navbar-bg: rgba(20, 20, 20, 0.8);
-    --border-color: #333333;
-    --input-bg: #2a2a2a;
-    --footer-bg: #1a1a1a;
+    --bg-color: #101820;
+    --card-bg: #1B263B;
+    --footer-bg: #1B263B;
+    --navbar-bg: rgba(27, 38, 59, 0.8);
+    
+    --text-color: #EAECEF;
+    /* === CORRECCIÓN DE VISIBILIDAD === */
+    /* Se aumentó el brillo de este color para que sea legible en fondos oscuros. */
+    --text-muted-color: #BCC2CE;
+
+    --primary-color: #33D4F5;
+    --secondary-color: #2B68E0;
+    --title-color: #8899EE;
+
+    --border-color: #27374D;
+    --input-bg: #1B263B;
+    
     --shadow-intensity: 0 0 15px;
-    /* === CORRECCIÓN APLICADA === */
-    --text-muted-color: #a0a0a0; /* Color para texto secundario en modo oscuro */
-    --navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+    --navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51, 212, 245, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+    --primary-gradient: linear-gradient(135deg, #33D4F5, #2B68E0);
 }
 
 /* El atributo [data-theme="light"] en <html> activa estas variables para el tema claro */
 [data-theme="light"] {
-    --bg-color: #f9f9f9;
-    --text-color: #000000;
-    --primary-color: #ff0000;
+    --bg-color: #F5F7FA;
     --card-bg: #ffffff;
-    --navbar-bg: rgba(249, 249, 249, 0.9);
-    --border-color: #dddddd;
-    --input-bg: #eeeeee;
-    --footer-bg: #f1f1f1;
-    --shadow-intensity: 0 0 8px;
-    /* === CORRECCIÓN APLICADA === */
-    --text-muted-color: #6c757d; /* Color para texto secundario en modo claro */
-    --navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    --footer-bg: #ffffff;
+    --navbar-bg: rgba(245, 247, 250, 0.9);
+
+    --text-color: #212529;
+    --text-muted-color: #6c757d;
+
+    --primary-color: #2B68E0;
+    --secondary-color: #33D4F5;
+    --title-color: #2B68E0;
+
+    --border-color: #EAECEF;
+    --input-bg: #EAECEF;
+
+    --shadow-intensity: 0 0 10px;
+
+    --navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(43, 104, 224, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 
-/* =================================================== */
-/* ============= ESTILOS GENERALES Y RESETS ========== */
-/* =================================================== */
+/* ... (El resto de los estilos generales y resets se mantienen igual) ... */
 * {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 html {
     scroll-behavior: smooth;
-    /* === CORRECCIÓN APLICADA === */
-    /* Ajustamos el padding para que coincida con el del body, asegurando que los saltos de ancla (ej: /#perfil) no queden ocultos */
     scroll-padding-top: 80px;
 }
 
 body {
-    /* === CORRECCIÓN APLICADA === */
-    /* Se añade un padding-top para evitar que el contenido de la primera sección
-       quede oculto detrás de la barra de navegación fija (fixed-top). */
     padding-top: 80px; 
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -69,15 +78,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-    color: var(--primary-color);
+    color: var(--title-color);
     margin-bottom: 1rem;
     font-weight: 700;
     text-transform: uppercase;
 }
 
-/* =================================================== */
-/* ============= BARRA DE NAVEGACIÓN ================= */
-/* =================================================== */
+/* ... (Los estilos de Navbar y Perfil se mantienen igual) ... */
 .navbar {
     background-color: var(--navbar-bg);
     backdrop-filter: blur(10px);
@@ -85,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar .navbar-brand {
-    color: var(--primary-color);
+    color: var(--title-color);
     font-weight: bold;
     font-size: 1.5rem;
 }
@@ -104,9 +111,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-toggler-icon {
-    /* === CORRECCIÓN APLICADA === */
-    /* Usamos una variable para el ícono, así puede cambiar entre temas.
-       El valor de la variable se define arriba en :root y [data-theme="light"]. */
     background-image: var(--navbar-toggler-icon-bg);
 }
 
@@ -117,9 +121,6 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
 }
 
-/* =================================================== */
-/* =================== PERFIL ======================== */
-/* =================================================== */
 .profile-img {
     width: 200px;
     height: 200px;
@@ -146,34 +147,53 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+
 /* =================================================== */
-/* ============= ESTILOS PARA TARJETAS DE VIDEO ======== */
+/* ============= ESTILOS PARA TARJETAS ================ */
 /* =================================================== */
 
-/* Este estilo es para los enlaces que envuelven las tarjetas de video */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    /* === CORRECCIÓN DE VISIBILIDAD === */
+    /* Aseguramos que todo el texto dentro de la tarjeta herede el color principal del tema */
+    color: var(--text-color);
+}
+
+/* === NUEVO: Clase para el borde luminoso === */
+/* Añade esta clase a las tarjetas de experiencia y proyectos en tu HTML */
+.card-glow {
+    box-shadow: 0 0 12px -4px var(--primary-color);
+}
+
+/* === MEJORA: Hover intensifica el brillo de las tarjetas luminosas === */
+.card-glow:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px -2px var(--primary-color);
+}
+
+
+/* Estilos para las tarjetas de video */
 .video-link-card {
-    display: block; /* Hace que el enlace ocupe todo el espacio de la tarjeta */
-    text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
-    color: inherit; /* Hace que el texto dentro de la tarjeta herede el color del tema, no el color azul de los enlaces */
+    display: block; 
+    text-decoration: none; 
+    color: inherit; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .video-link-card:hover {
-    color: inherit; /* Mantiene el color del texto al pasar el ratón */
-    transform: translateY(-10px); /* Mantenemos el efecto de levitación */
-    box-shadow: var(--shadow-intensity) var(--primary-color);
+    color: inherit;
+    /* La transformación y la sombra ahora se gestionan con la clase .card-glow */
 }
 
 .video-link-card .card {
-    /* La tarjeta dentro del enlace no necesita la transición porque ya la tiene el enlace padre */
     transition: none;
 }
 
 .video-link-card:hover .card {
-    box-shadow: none; /* Evitamos doble sombra */
+    box-shadow: none; 
 }
 
-/* Animación de zoom suave en la imagen de la tarjeta al pasar el ratón */
 .card .card-img-top {
     transition: transform 0.3s ease;
 }
@@ -181,11 +201,9 @@ h1, h2, h3, h4, h5, h6 {
 .video-link-card:hover .card-img-top {
     transform: scale(1.05);
 }
+
 .card-subtitle.text-muted {
-    /* === CORRECCIÓN APLICADA === */
-    /* Sobrescribimos el color por defecto de Bootstrap para que nuestro
-       sistema de temas controle también este elemento. */
-    color: var(--text-muted-color) !important; /* !important es para asegurar que anule el estilo de Bootstrap */
+    color: var(--text-muted-color) !important;
 }
 
 .card img, .card .ratio {
@@ -217,15 +235,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    background: var(--primary-gradient);
+    border: none;
     font-weight: bold;
+    color: #000;
 }
 
 .btn-primary:hover {
     opacity: 0.9;
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    box-shadow: 0 0 8px var(--primary-color);
+    background: var(--primary-gradient); 
 }
 
 footer {
