@@ -6,57 +6,40 @@
 /* =================================================== */
 /* ============== VARIABLES CSS PARA TEMAS =========== */
 /* =================================================== */
-
-/* :root define las variables para el tema por defecto (oscuro, inspirado en el logo) */
 :root {
     --bg-color: #101820;
     --card-bg: #1B263B;
     --footer-bg: #1B263B;
     --navbar-bg: rgba(27, 38, 59, 0.8);
-    
     --text-color: #EAECEF;
-    /* === CORRECCIÓN DE VISIBILIDAD === */
-    /* Se aumentó el brillo de este color para que sea legible en fondos oscuros. */
     --text-muted-color: #BCC2CE;
-
     --primary-color: #33D4F5;
     --secondary-color: #2B68E0;
     --title-color: #8899EE;
-
     --border-color: #27374D;
     --input-bg: #1B263B;
-    
     --shadow-intensity: 0 0 15px;
-
     --navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51, 212, 245, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-
     --primary-gradient: linear-gradient(135deg, #33D4F5, #2B68E0);
 }
 
-/* El atributo [data-theme="light"] en <html> activa estas variables para el tema claro */
 [data-theme="light"] {
     --bg-color: #F5F7FA;
     --card-bg: #ffffff;
     --footer-bg: #ffffff;
     --navbar-bg: rgba(245, 247, 250, 0.9);
-
     --text-color: #212529;
     --text-muted-color: #6c757d;
-
     --primary-color: #2B68E0;
     --secondary-color: #33D4F5;
     --title-color: #2B68E0;
-
     --border-color: #EAECEF;
     --input-bg: #EAECEF;
-
     --shadow-intensity: 0 0 10px;
-
     --navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(43, 104, 224, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-
-/* ... (El resto de los estilos generales y resets se mantienen igual) ... */
+/* ESTILOS GENERALES */
 * {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -67,16 +50,13 @@ html {
 }
 
 body {
-    padding-top: 80px; 
+    padding-top: 80px;
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-}
-
+h1, h2, h3, h4, h5, h6 { font-weight: 700; }
 .section-title {
     color: var(--title-color);
     margin-bottom: 1rem;
@@ -84,43 +64,20 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
-/* ... (Los estilos de Navbar y Perfil se mantienen igual) ... */
+/* NAVBAR */
 .navbar {
     background-color: var(--navbar-bg);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
 }
+.navbar .navbar-brand { color: var(--title-color); font-weight: bold; font-size: 1.5rem; }
+.navbar .nav-link { color: var(--text-color); margin: 0 10px; }
+.navbar .nav-link:hover, .navbar .nav-link.active { color: var(--primary-color); }
+.navbar-toggler { border-color: var(--primary-color); }
+.navbar-toggler-icon { background-image: var(--navbar-toggler-icon-bg); }
+.theme-toggle-btn { color: var(--primary-color); font-size: 1.2rem; background: none; border: none; }
 
-.navbar .navbar-brand {
-    color: var(--title-color);
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.navbar .nav-link {
-    color: var(--text-color);
-    margin: 0 10px;
-}
-
-.navbar .nav-link:hover, .navbar .nav-link.active {
-    color: var(--primary-color);
-}
-
-.navbar-toggler {
-    border-color: var(--primary-color);
-}
-
-.navbar-toggler-icon {
-    background-image: var(--navbar-toggler-icon-bg);
-}
-
-.theme-toggle-btn {
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    background: none;
-    border: none;
-}
-
+/* PERFIL */
 .profile-img {
     width: 200px;
     height: 200px;
@@ -130,149 +87,117 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: var(--shadow-intensity) var(--primary-color);
     animation: heartbeat 1.5s infinite ease-in-out;
 }
-
-.profile-bio {
-    max-width: 600px;
-    margin: 1rem auto;
-}
-
+.profile-bio { max-width: 600px; margin: 1rem auto; }
 @keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
-        box-shadow: var(--shadow-intensity) var(--primary-color);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 0 25px var(--primary-color);
-    }
+    0%, 100% { transform: scale(1); box-shadow: var(--shadow-intensity) var(--primary-color); }
+    50% { transform: scale(1.05); box-shadow: 0 0 25px var(--primary-color); }
 }
-
 
 /* =================================================== */
 /* ============= ESTILOS PARA TARJETAS ================ */
 /* =================================================== */
-
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    /* === CORRECCIÓN DE VISIBILIDAD === */
-    /* Aseguramos que todo el texto dentro de la tarjeta herede el color principal del tema */
     color: var(--text-color);
 }
+.card-subtitle.text-muted { color: var(--text-muted-color) !important; }
+.card img, .card .ratio { border-bottom: 1px solid var(--border-color); }
 
-/* === NUEVO: Clase para el borde luminoso === */
-/* Añade esta clase a las tarjetas de experiencia y proyectos en tu HTML */
-.card-glow {
-    box-shadow: 0 0 12px -4px var(--primary-color);
-}
-
-/* === MEJORA: Hover intensifica el brillo de las tarjetas luminosas === */
-.card-glow:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px -2px var(--primary-color);
-}
-
-
-/* Estilos para las tarjetas de video */
-.video-link-card {
-    display: block; 
-    text-decoration: none; 
-    color: inherit; 
+/* CÓDIGO PARA ANIMACIÓN Y BRILLO INTERACTIVO */
+.card-interactive {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px -3px var(--primary-color);
+}
+.card-interactive:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 22px 0px var(--primary-color);
 }
 
-.video-link-card:hover {
+/* AJUSTES PARA TARJETAS DE VIDEO */
+.video-link-card {
+    display: block;
+    text-decoration: none;
     color: inherit;
-    /* La transformación y la sombra ahora se gestionan con la clase .card-glow */
 }
-
 .video-link-card .card {
     transition: none;
+    box-shadow: none;
 }
-
-.video-link-card:hover .card {
-    box-shadow: none; 
+.video-link-card:hover {
+    color: inherit;
 }
-
-.card .card-img-top {
+.video-link-card .card-img-top {
     transition: transform 0.3s ease;
 }
-
 .video-link-card:hover .card-img-top {
     transform: scale(1.05);
 }
 
-.card-subtitle.text-muted {
-    color: var(--text-muted-color) !important;
-}
 
-.card img, .card .ratio {
-    border-bottom: 1px solid var(--border-color);
-}
-
-/* =================================================== */
-/* ============ TECNOLOGÍAS, CONTACTO, FOOTER ======== */
-/* =================================================== */
-.tech-icon {
-    transition: transform 0.3s ease;
-}
-
-.tech-icon:hover {
-    transform: scale(1.1);
-}
-
+/* TECNOLOGÍAS, CONTACTO, FOOTER */
+.tech-icon { transition: transform 0.3s ease; }
+.tech-icon:hover { transform: scale(1.1); }
 .form-control {
     background-color: var(--input-bg);
     color: var(--text-color);
     border: 1px solid var(--border-color);
 }
-
 .form-control:focus {
     background-color: var(--input-bg);
     color: var(--text-color);
     border-color: var(--primary-color);
     box-shadow: 0 0 5px var(--primary-color);
 }
-
 .btn-primary {
     background: var(--primary-gradient);
     border: none;
     font-weight: bold;
     color: #000;
 }
-
 .btn-primary:hover {
     opacity: 0.9;
     box-shadow: 0 0 8px var(--primary-color);
-    background: var(--primary-gradient); 
+    background: var(--primary-gradient);
 }
-
 footer {
     background-color: var(--footer-bg);
     border-top: 1px solid var(--border-color);
 }
-
 .social-icon {
     font-size: 1.8rem;
     color: var(--text-color);
     margin: 0 15px;
 }
+.social-icon:hover { color: var(--primary-color); }
 
-.social-icon:hover {
-    color: var(--primary-color);
-}
-
+/* ANIMACIÓN DE ENTRADA */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
-
 section {
     animation: fadeIn 0.8s ease-in-out;
+}
+
+/* ============================================================== */
+/* === CÓDIGO PARA CORREGIR IMÁGENES Y ALINEACIÓN DE VIDEOS === */
+/* ============================================================== */
+
+/* Le da un color de fondo al contenedor por si la imagen no carga */
+.ratio {
+    background-color: var(--card-bg);
+}
+
+/* Asegura que la imagen llene el contenedor sin deformarse */
+.ratio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esta es la propiedad clave */
+}
+
+/* Mejora para el título de la sección */
+.section-title i {
+    margin-right: 10px;
+    color: var(--primary-color);
 }
