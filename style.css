@@ -222,59 +222,85 @@ section {
     opacity: 0.7;
 }
 
-/* ===================================== */
-/* === ESTILOS PARA EL CARRUSEL (MEJORADOS) === */
-/* ===================================== */
+/* ==================================================================== */
+/* === ESTILOS DEFINITIVOS PARA PROYECTOS (MODO CLARO Y OSCURO) === */
+/* ==================================================================== */
 
-/* Estilo base para los controles de flecha */
+/* --- Contenido inferior de la tarjeta (Botones y Líneas) --- */
+.card-footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.decorative-lines {
+    width: 120px;
+    height: 1px;
+    /* Usamos una variable para que el color cambie con el tema */
+    background-color: var(--text-color-secondary); 
+    margin-top: 1.25rem;
+    opacity: 0.7;
+}
+
+/* --- Estilos del Carrusel Adaptativos --- */
+
+/* Flechas: Estilo base para el área clickeable */
 #projectCarousel .carousel-control-prev,
 #projectCarousel .carousel-control-next {
     width: 50px;
     height: 50px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(0, 0, 0, 0.1); /* Fondo sutil para MODO CLARO */
     border-radius: 50%;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* ★★★ EFECTO HOVER LUMINOSO Y VIVO PARA LAS FLECHAS ★★★ */
-#projectCarousel .carousel-control-prev:hover,
-#projectCarousel .carousel-control-next:hover {
-    /* Usamos el color primario de Bootstrap para un azul brillante */
-    background-color: rgba(13, 110, 253, 0.3); 
-    /* Efecto de resplandor (glow) */
-    box-shadow: 0 0 15px rgba(13, 110, 253, 0.7);
-}
-
-/* Iconos de las flechas */
+/* Icono de la flecha: por defecto es oscuro, perfecto para MODO CLARO */
 #projectCarousel .carousel-control-prev-icon,
 #projectCarousel .carousel-control-next-icon {
-    filter: invert(1) opacity(0.7);
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Iconos de las flechas al pasar el cursor */
+/* ★★★ AJUSTES ESPECÍFICOS PARA MODO OSCURO ★★★ */
+[data-theme="dark"] #projectCarousel .carousel-control-prev,
+[data-theme="dark"] #projectCarousel .carousel-control-next {
+    background-color: rgba(255, 255, 255, 0.08); /* Fondo sutil para MODO OSCURO */
+}
+[data-theme="dark"] #projectCarousel .carousel-control-prev-icon,
+[data-theme="dark"] #projectCarousel .carousel-control-next-icon {
+    filter: invert(1) opacity(0.7); /* Invierte el icono a blanco para MODO OSCURO */
+}
+
+/* Efecto Hover: se ilumina con el color primario */
+#projectCarousel .carousel-control-prev:hover,
+#projectCarousel .carousel-control-next:hover {
+    background-color: rgba(13, 110, 253, 0.2); 
+    box-shadow: 0 0 15px rgba(13, 110, 253, 0.7);
+}
+/* Efecto Hover del icono: se vuelve más grande y opaco */
 #projectCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
 #projectCarousel .carousel-control-next:hover .carousel-control-next-icon {
-    filter: invert(1) opacity(1); /* Se vuelve completamente blanco y opaco */
     transform: scale(1.2);
 }
+[data-theme="dark"] #projectCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
+[data-theme="dark"] #projectCarousel .carousel-control-next:hover .carousel-control-next-icon {
+    filter: invert(1) opacity(1); /* Opacidad completa en hover de MODO OSCURO */
+}
 
-/* Estilo para los indicadores (puntos) */
+/* Indicadores (puntos de abajo) */
 #projectCarousel .carousel-indicators button {
-    background-color: #ffffff;
+    background-color: var(--text-color-secondary); /* Usa variable para cambiar de color */
     opacity: 0.5;
 }
-
 #projectCarousel .carousel-indicators .active {
     opacity: 1;
-}
-/* ★★★ AÑADIR ESTE CÓDIGO PARA EL GRUPO DE BOTONES ★★★ */
-.button-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem; /* Espacio de separación entre los botones (16px por defecto) */
-    width: 100%;
 }
