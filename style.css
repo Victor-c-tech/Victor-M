@@ -201,3 +201,80 @@ section {
     margin-right: 10px;
     color: var(--primary-color);
 }
+/* ========================================================= */
+/* === NUEVOS ESTILOS CORREGIDOS PARA PROYECTOS (BOTÓN Y CARRUSEL) === */
+/* ========================================================= */
+
+/* Contenedor para la parte inferior de la tarjeta (botón + líneas) */
+.card-footer-content {
+    display: flex;
+    flex-direction: column; /* Apila el botón y las líneas verticalmente */
+    align-items: center;   /* Centra los elementos */
+    padding-top: 1rem;     /* Espacio sobre el botón */
+}
+
+/* Las líneas decorativas, ahora DEBAJO del botón */
+.decorative-lines {
+    width: 120px; /* Ancho total de la línea */
+    height: 1px;
+    background-color: var(--text-color-secondary);
+    margin-top: 1.25rem; /* ★★★ Aumenté el espacio para bajarlas más ★★★ */
+    opacity: 0.7;
+}
+
+/* ===================================== */
+/* === ESTILOS PARA EL CARRUSEL (MEJORADOS) === */
+/* ===================================== */
+
+/* Estilo base para los controles de flecha */
+#projectCarousel .carousel-control-prev,
+#projectCarousel .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ★★★ EFECTO HOVER LUMINOSO Y VIVO PARA LAS FLECHAS ★★★ */
+#projectCarousel .carousel-control-prev:hover,
+#projectCarousel .carousel-control-next:hover {
+    /* Usamos el color primario de Bootstrap para un azul brillante */
+    background-color: rgba(13, 110, 253, 0.3); 
+    /* Efecto de resplandor (glow) */
+    box-shadow: 0 0 15px rgba(13, 110, 253, 0.7);
+}
+
+/* Iconos de las flechas */
+#projectCarousel .carousel-control-prev-icon,
+#projectCarousel .carousel-control-next-icon {
+    filter: invert(1) opacity(0.7);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Iconos de las flechas al pasar el cursor */
+#projectCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
+#projectCarousel .carousel-control-next:hover .carousel-control-next-icon {
+    filter: invert(1) opacity(1); /* Se vuelve completamente blanco y opaco */
+    transform: scale(1.2);
+}
+
+/* Estilo para los indicadores (puntos) */
+#projectCarousel .carousel-indicators button {
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+
+#projectCarousel .carousel-indicators .active {
+    opacity: 1;
+}
+/* ★★★ AÑADIR ESTE CÓDIGO PARA EL GRUPO DE BOTONES ★★★ */
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Espacio de separación entre los botones (16px por defecto) */
+    width: 100%;
+}
