@@ -64,7 +64,6 @@
             <div class="row">
                 <!-- Tarjeta 1 -->
                 <div class="col-md-4 mb-4">
-                    <!-- AÑADIDA CLASE 'card-interactive' PARA LOS EFECTOS -->
                     <div class="card h-100 card-interactive">
                         <img src="https://i.ibb.co/1YH7PvJL/logo-lema-universidad.png" class="card-img-top" alt="Logo de Innovatech Solutions" style="object-fit: contain; padding: 2rem; max-height: 1000px;">
                         <div class="card-body">
@@ -77,7 +76,6 @@
                 </div>
                 <!-- Tarjeta 2 -->
                 <div class="col-md-4 mb-4">
-                    <!-- AÑADIDA CLASE 'card-interactive' PARA LOS EFECTOS -->
                     <div class="card h-100 card-interactive">
                         <img src="https://www.applus.com/dam/jcr:96542402-4173-47f5-9751-9aa1bc546e8b/LOGOS%20OUR%20BRANDS%20-%20LABS-01-22.png" class="card-img-top" alt="Logo de Data Core Analytics" style="object-fit: contain; padding: 2rem; max-height: 1000px;">
                         <div class="card-body">
@@ -90,7 +88,6 @@
                 </div>
                 <!-- Tarjeta 3 -->
                 <div class="col-md-4 mb-4">
-                    <!-- AÑADIDA CLASE 'card-interactive' PARA LOS EFECTOS -->
                     <div class="card h-100 card-interactive">
                         <img src="https://i.ibb.co/9kCxvQV7/Tech.png"   class="card-img-top" alt="Logo de Code Start Inc." style="object-fit: contain; padding: 2rem; max-height: 1000px;">
                         <div class="card-body">
@@ -118,67 +115,120 @@
         </div>
     </section>
 
-    <!-- SECCIÓN PROYECTOS -->
-    <section id="proyectos" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-5">Proyectos</h2>
-            <div class="row">
+ <!-- ======================================================================= -->
+<!-- ============== SECCIÓN PROYECTOS (DISEÑO CORREGIDO) ============== -->
+<!-- ======================================================================= -->
+<section id="proyectos" class="py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Proyectos</h2>
+        
+        <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+
+            <div class="carousel-inner">
                 <!-- Proyecto 1 -->
-                <div class="col-md-4 mb-4">
-                    <!-- AÑADIDA CLASE 'card-interactive' PARA LOS EFECTOS -->
-                    <div class="card h-100 card-interactive">
-                        <img src="https://i.ibb.co/ymH0M0bK/2025-06-27.png"  class="card-img-top" alt="proyecto1.png">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">VetCare🐾</h5>
-                            <p class="card-text">Pagina web de una clinica veterinaria que da asistencias medicas a mascotas domesticas y del campos etc.</p>
-                            <!-- ★★★ CAMBIA '#' POR LA URL REAL DE TU PROYECTO ★★★ -->
-                            <a href="https://vet-care-alpha.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-auto align-self-center">Ver</a>
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center">
+                        <div class="card card-interactive mx-2 text-center" style="max-width: 25rem;">
+                            <img src="https://i.ibb.co/ymH0M0bK/2025-06-27.png" class="card-img-top" alt="Proyecto VetCare">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">VetCare🐾</h5>
+                                <p class="card-text">Pagina web de una clinica veterinaria que da asistencias medicas a mascotas domesticas y del campos etc.</p>
+                                <!-- ★★★ NUEVA ESTRUCTURA CORREGIDA PARA BOTÓN Y LÍNEAS ★★★ -->
+                                <div class="card-footer-content mt-auto">
+                                    <a href="https://vet-care-alpha.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver</a>
+                                    <div class="decorative-lines"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- Proyecto 2 -->
-                <div class="col-md-4 mb-4">
-                    <!-- AÑADIDA CLASE 'card-interactive' PARA LOS EFECTOS -->
-                    <div class="card h-100 card-interactive">
-                        <img src="https://i.ibb.co/84L4hYN0/Repositorio-en-Git-Hub.png"  class="card-img-top" alt="proyecto2.png">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Proyectos en GitHub</h5>
-                            <p class="card-text">Apartado para que puedan ver mi proyecto de GitHub.</p>
-                             <!-- ★★★ CAMBIA '#' POR LA URL REAL DE TU PROYECTO ★★★ -->
-                            <a href="https://github.com/Victor-c-tech/Victor-M.git" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-auto align-self-center">Ver</a>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="card card-interactive mx-2 text-center" style="max-width: 25rem;">
+                            <img src="https://i.ibb.co/84L4hYN0/Repositorio-en-Git-Hub.png" class="card-img-top" alt="Proyecto E-commerce">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Proyectos en GitHub</h5>
+                                <p class="card-text">Apartado para que puedan ver mi proyecto de GitHub.</p>
+                                <div class="card-footer-content mt-auto">
+                                    <a href="https://github.com/Victor-c-tech/Victor-M.git" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver</a>
+                                    <div class="decorative-lines"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- Proyecto 3 -->
-                <div class="col-md-4 mb-4">
-                    <!-- AÑADIDA CLASE 'card-interactive' PARA LOS EFECTOS -->
-                    <div class="card h-100 card-interactive">
-                        <img src="https://i.ibb.co/XZGqnwRc/2025-06-12-1.png" class="card-img-top" alt="proyecto3.png">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">App para ver Peliculas y Series</h5>
-                            <p class="card-text">Aplicación movil creada en xamrin forms para ver pelicula usando las siguientes plataformas: Neflix, Disney, HBO y Amazon Prime.</p>
-                             <!-- ★★★ CAMBIA '#' POR LA URL REAL DE TU PROYECTO ★★★ -->
-                            <a href="https://mega.nz/file/00JgjABI#I4j8-slDDZLnpk3MCOKVWmFAup68btHireCrYwLn7g8" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-auto align-self-center">Descargar App</a>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="card card-interactive mx-2 text-center" style="max-width: 25rem;">
+                            <img src="https://i.ibb.co/XZGqnwRc/2025-06-12-1.png" class="card-img-top" alt="Proyecto App de Tareas">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">App para ver Peliculas y Series</h5>
+                                <p class="card-text">Aplicación movil creada en xamrin forms para ver pelicula usando las siguientes plataformas: Neflix, Disney, HBO y Amazon Prime.</p>
+                                <div class="card-footer-content mt-auto">
+                                    <a href="https://mega.nz/file/00JgjABI#I4j8-slDDZLnpk3MCOKVWmFAup68btHireCrYwLn7g8" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Descargar App</a>
+                                    <div class="decorative-lines"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- Proyecto 4 -->
+                <!-- ★★★ EJEMPLO DE TARJETA CON DOS BOTONES ★★★ -->
+<div class="carousel-item">
+    <div class="d-flex justify-content-center">
+        <div class="card card-interactive mx-2 text-center" style="max-width: 25rem;">
+            <!-- Puedes usar una imagen tuya para la introducción -->
+            <img src="https://i.ibb.co/gZSX9SCB/redes-cisco.png" class="card-img-top" alt="Introducción al Proyecto de Redes">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Proyecto de Redes</h5>
+                <p class="card-text">Este proyecto se basa en la instalacion, configuracion y revision de los servicios de redes en una empresa.</p>
+                
+                <!-- ★★★ ESTRUCTURA PARA DOS BOTONES LADO A LADO ★★★ -->
+                <div class="card-footer-content mt-auto">
+                    <!-- Contenedor para los botones -->
+                    <div class="button-group">
+                        <!-- Botón 1: Ver Proyecto -->
+                        <a href="https://mega.nz/file/xhhTEZja#gpNez5PU5acporswIsx6RbRxj-9Xhh4FU5iJsdQ3Ne0" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver</a>
+                        <!-- Botón 2: Ver Video -->
+                        <a href="https://youtu.be/5V387TAav4E?si=rrkvqIRBLUsuo0Oy" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver video</a>
+                    </div>
+                    <!-- Líneas decorativas debajo -->
+                    <div class="decorative-lines"></div>
+                </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</div>
 
-  <!-- ============================================= -->
-<!-- ============== SECCIÓN VIDEOS =============== -->
-<!-- ============================================= -->
+            <!-- Controles del carrusel (flechas) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+  <!-- SECCIÓN VIDEOS -->
 <section id="videos" class="py-5">
     <div class="container">
-        <!-- TÍTULO MEJORADO CON ICONO -->
         <h2 class="section-title text-center mb-5">
             <i class="fas fa-film"></i> VIDEOS Y PROYECTOS DESTACADOS
         </h2>
-
-        <!-- REJILLA MÁS GRANDE Y ROBUSTA (2 TARJETAS POR FILA EN DESKTOP) -->
         <div class="row justify-content-center g-5">
-
             <!-- Video 1 -->
             <div class="col-lg-6">
                 <a href="https://youtu.be/6cccm00jDFA?si=m2O2cU3soz1pLd2L" target="_blank" rel="noopener noreferrer" class="video-link-card">
@@ -189,13 +239,10 @@
                         <div class="card-body">
                             <h5 class="card-title">App de Tipos de Datos</h5>
                             <p class="card-text">Desarrollo de una aplicación móvil en Xamarin.Forms para determinar tipos de datos.</p>
-                            <!-- ★★★ Boton para ir a Descargar la App ★★★ -->
-                             <a href="https://mega.nz/file/08YWDRoY#yJntWjcXcRPh32z_7CqDmNkU_B7-Tq64ZrQDn148Zqo" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-auto align-self-center">Descargar App</a>
                         </div>
                     </div>
                 </a>
             </div>
-
             <!-- Video 2 -->
             <div class="col-lg-6">
                 <a href="https://youtu.be/6_piFwxvmSU?si=sCx6Ci6IVcMQG2Gg" target="_blank" rel="noopener noreferrer" class="video-link-card">
@@ -206,13 +253,10 @@
                         <div class="card-body">
                             <h5 class="card-title">Prototipo Web en Figma</h5>
                             <p class="card-text">Diseño de un sitio web para una consultora tecnológica, mostrando la interacción del usuario.</p>
-                           <!-- ★★★ Boton para ir a Descargar la App ★★★ --> 
-                             <a href="https://www.figma.com/proto/OUwOGuL7Wu6mSvUjPfm3Da/Dise%C3%B1o-de-TECHNO-SOLUTIONS?node-id=1-3&p=f&t=wgBGNmMgCZTH65ny-0&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A3&show-proto-sidebar=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-auto align-self-center">Ver Proyeto 👁‍🗨</a>
                         </div>
                     </div>
                 </a>
             </div>
-
             <!-- Video 3 -->
             <div class="col-lg-6">
                 <a href="https://youtu.be/-OVp6tuCztw?si=-PCPnFvGFNPL3EOk" target="_blank" rel="noopener noreferrer" class="video-link-card">
@@ -223,34 +267,24 @@
                         <div class="card-body">
                             <h5 class="card-title">Mapa Conceptual Multimedia</h5>
                             <p class="card-text">Explicación de los conceptos, elementos y áreas de uso de la multimedia.</p>
-<!-- ★★★ Boton para ir a Descargar la App ★★★ -->
-                             <a href="https://drive.google.com/file/d/1-FkhR0gru0BCIRJwAXcxdwzbxpFsbCwd/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-auto align-self-center">Ver Documento 📚</a>
                         </div>
                     </div>
                 </a>
             </div>
-
-            <!-- ★★★ NUEVA TARJETA DE VIDEO (CON IMAGEN CORREGIDA) ★★★ -->
+            <!-- Video 4 -->
             <div class="col-lg-6">
                 <a href="https://youtu.be/CJbP7mYRdIg?si=n9uid3S26D3ed3V0" target="_blank" rel="noopener noreferrer" class="video-link-card">
                     <div class="card h-100 card-interactive">
                         <div class="ratio ratio-16x9">
-                             <!--
-                                HE CAMBIADO ESTO POR UN MARCADOR DE POSICIÓN QUE NO FALLA.
-                                REEMPLÁZALO CON LA RUTA A TU IMAGEN, por ejemplo: "img/mi-nuevo-video.jpg"
-                             -->
                              <img src="img/video_app_presentacion_personal.png" alt="Vista previa de video de app presentacion personal">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">App de presentacion personal</h5>
-                            <p class="card-text">Esto es una app de presentacion personal donde doy todas mis redes sociales y mi contactos.</p>
-             <!-- ★★★ Boton para ir a Descargar la App ★★★ -->
-                            <a href="https://mega.nz/file/g9BBGboa#rcWvA6uAE-3o4oqgrKsNqqNhvC0y1Gh-Y8tnXfNsek8" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-auto align-self-center">Descargar App</a>
+                            <p class="card-text">Esto es una aap de presentacion personal donde doy todas mis redes sociales y mi contctos.</p>
                         </div>
                     </div>
                 </a>
             </div>
-
         </div>
     </div>
 </section>
