@@ -116,20 +116,23 @@
     </section>
 
  <!-- ======================================================================= -->
-<!-- ============== SECCIÓN PROYECTOS (DISEÑO CORREGIDO) ============== -->
+<!-- ============== SECCIÓN PROYECTOS (CARRUSEL CORREGIDO) ============= -->
 <!-- ======================================================================= -->
 <section id="proyectos" class="py-5">
     <div class="container">
         <h2 class="section-title text-center mb-5">Proyectos</h2>
         
         <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- ★★★ AQUÍ ESTÁ LA CORRECCIÓN ★★★ -->
+            <!-- Se han añadido los indicadores para los 7 proyectos -->
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <!-- ★★★ NUEVO INDICADOR PARA EL QUINTO PROYECTO ★★★ -->
                 <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
             </div>
 
             <div class="carousel-inner">
@@ -200,67 +203,68 @@
                         </div>
                     </div>
                 </div>
-                
-               <!-- Proyecto 5 -->
-<div class="carousel-item">
-    <div class="d-flex justify-content-center">
-        <div class="card card-interactive mx-2 text-center" style="max-width: 25rem;">
-            
-            <img src="img/soporte.jpg" class="card-img-top" alt="Captura de pantalla de mi proyecto pagina de soporte tecnico">
-            
-            <div class="card-body d-flex flex-column">
-                <!-- CAMBIA EL TÍTULO Y LA DESCRIPCIÓN -->
-                <h5 class="card-title">Soporte Tecnico 🛠</h5>
-                <p class="card-text">Pagina web creada por Victor-Tech para brindar servicios como soporte tecnico desarrollo de paginas web entre otros.</p>
-                <div class="card-footer-content mt-auto">
-                    <!-- CAMBIA EL ENLACE '#' POR EL LINK REAL A TU PROYECTO -->
-                    <a href="https://soporte-tecnico-beta.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver Proyecto</a>
-                    <div class="decorative-lines"></div>
+                <!-- Proyecto 5 -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="card card-interactive mx-2 text-center" style="max-width: 25rem;">
+                            <img src="img/soporte.jpg" class="card-img-top" alt="Captura de pantalla de mi proyecto pagina de soporte tecnico">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Soporte Tecnico 🛠</h5>
+                                <p class="card-text">Pagina web creada por Victor-Tech para brindar servicios como soporte tecnico desarrollo de paginas web entre otros.</p>
+                                <div class="card-footer-content mt-auto">
+                                    <a href="https://soporte-tecnico-beta.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver Proyecto</a>
+                                    <div class="decorative-lines"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto 6 -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="card card-interactive mx-2 text-center" style="max-width: 25rem;">
+                            <img src="img/Juego_Dragon_Ball.jpeg" class="card-img-top" alt="Captura de pantalla de mi proyecto pagina de soporte tecnico">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">🎮 Juego de Cartas de Dragon Ball 🎮</h5>
+                                <p class="card-text">Este es un juego web que consiste en encontrar las cartas iguales antes de los 60 segundo de lo contrario perderas.</p>
+                                <div class="card-footer-content mt-auto">
+                                    <a href="https://juego-dragon-ball.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver y Jugar Proyecto</a>
+                                    <div class="decorative-lines"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto 7 -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="card card-interactive mx-2 text-center" style="max-width: 25rem;">
+                            <img src="img/Desafío_de_Lógica_ Automotriz.jpeg" class="card-img-top" alt="Captura de pantalla de mi proyecto pagina de soporte tecnico">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Desafío de Lógica con Estilo Automotriz</h5>
+                                <p class="card-text">Explora 4 desafíos de lógica de programación diseñados para estimular tu mente y mejorar tus habilidades técnicas. ¡Prepárate para pensar como un verdadero desarrollador!</p>
+                                <div class="card-footer-content mt-auto">
+                                    <a href="https://automotriz-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver Proyecto</a>
+                                    <div class="decorative-lines"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Controles del carrusel (flechas) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
-</div>
-                       <!-- Proyecto 6 -->
-<div class="carousel-item">
-    <div class="d-flex justify-content-center">
-        <div class="card card-interactive mx-2 text-center" style="max-width: 25rem;">
-            
-            <img src="img/juego_Dragon_Ball.jpg" class="card-img-top" alt="Captura de pantalla de mi proyecto pagina de soporte tecnico">
-            
-            <div class="card-body d-flex flex-column">
-                <!-- CAMBIA EL TÍTULO Y LA DESCRIPCIÓN -->
-                <h5 class="card-title">🎮 Juego de Cartas de Dragon Ball 🎮</h5>
-                <p class="card-text">Este es un juego web que consiste en encontrar las cartas iguales antes de los 60 segundo de lo contrario perderas.</p>
-                <div class="card-footer-content mt-auto">
-                    <!-- CAMBIA EL ENLACE '#' POR EL LINK REAL A TU PROYECTO -->
-                    <a href="https://juego-dragon-ball.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver y Jugar Proyecto</a>
-                    <div class="decorative-lines"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-                 <!-- Proyecto 7 -->
-<div class="carousel-item">
-    <div class="d-flex justify-content-center">
-        <div class="card card-interactive mx-2 text-center" style="max-width: 25rem;">
-            
-            <img src="img/Desafío_de_Lógica_ Automotriz.jpeg" class="card-img-top" alt="Captura de pantalla de mi proyecto pagina de soporte tecnico">
-            
-            <div class="card-body d-flex flex-column">
-                <!-- CAMBIA EL TÍTULO Y LA DESCRIPCIÓN -->
-                <h5 class="card-title">Desafío de Lógica con Estilo Automotriz</h5>
-                <p class="card-text">Explora 4 desafíos de lógica de programación diseñados para estimular tu mente y mejorar tus habilidades técnicas. ¡Prepárate para pensar como un verdadero desarrollador!</p>
-                <div class="card-footer-content mt-auto">
-                    <!-- CAMBIA EL ENLACE '#' POR EL LINK REAL A TU PROYECTO -->
-                    <a href="https://automotriz-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver Proyecto</a>
-                    <div class="decorative-lines"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</section>
                 <!--  FIN: de la seccion de  proyecto  -->
 
             </div>
