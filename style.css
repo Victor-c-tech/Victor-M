@@ -63,6 +63,10 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; }
     font-weight: 700;
     text-transform: uppercase;
 }
+.section-title i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
 
 /* NAVBAR */
 .navbar {
@@ -103,8 +107,6 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; }
 }
 .card-subtitle.text-muted { color: var(--text-muted-color) !important; }
 .card img, .card .ratio { border-bottom: 1px solid var(--border-color); }
-
-/* CÓDIGO PARA ANIMACIÓN Y BRILLO INTERACTIVO */
 .card-interactive {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 10px -3px var(--primary-color);
@@ -114,28 +116,16 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; }
     box-shadow: 0 0 22px 0px var(--primary-color);
 }
 
-/* AJUSTES PARA TARJETAS DE VIDEO */
-.video-link-card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
-.video-link-card .card {
-    transition: none;
-    box-shadow: none;
-}
-.video-link-card:hover {
-    color: inherit;
-}
-.video-link-card .card-img-top {
-    transition: transform 0.3s ease;
-}
-.video-link-card:hover .card-img-top {
-    transform: scale(1.05);
-}
-
-
-/* TECNOLOGÍAS, CONTACTO, FOOTER */
+/* ============================================================== */
+/* === AJUSTES PARA VIDEOS Y FORMULARIOS === */
+/* ============================================================== */
+.video-link-card { display: block; text-decoration: none; color: inherit; }
+.video-link-card .card { transition: none; box-shadow: none; }
+.video-link-card:hover { color: inherit; }
+.video-link-card .card-img-top { transition: transform 0.3s ease; }
+.video-link-card:hover .card-img-top { transform: scale(1.05); }
+.ratio { background-color: var(--card-bg); }
+.ratio img { width: 100%; height: 100%; object-fit: cover; }
 .tech-icon { transition: transform 0.3s ease; }
 .tech-icon:hover { transform: scale(1.1); }
 .form-control {
@@ -149,6 +139,10 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; }
     border-color: var(--primary-color);
     box-shadow: 0 0 5px var(--primary-color);
 }
+
+/* =================================================== */
+/* ================ ESTILOS DE BOTONES ================= */
+/* =================================================== */
 .btn-primary {
     background: var(--primary-gradient);
     border: none;
@@ -160,6 +154,114 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; }
     box-shadow: 0 0 8px var(--primary-color);
     background: var(--primary-gradient);
 }
+
+/* ========================================================= */
+/* === ESTILOS ESPECÍFICOS PARA LA SECCIÓN DE PROYECTOS === */
+/* ========================================================= */
+
+/* ★★★ SOLUCIÓN 1: TAMAÑO UNIFORME PARA TARJETAS DEL CARRUSEL ★★★ */
+#projectCarousel .card {
+    /* Se define una altura fija para todas las tarjetas del carrusel. */
+    height: 38rem; 
+    /* El ancho ya está limitado por 'max-width' en el HTML. Centramos por si acaso. */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#projectCarousel .card .card-img-top {
+    /* Se define una altura fija para la imagen para que todas sean iguales. */
+    height: 19rem; 
+    object-fit: cover; /* La imagen cubre el espacio sin distorsionarse. */
+}
+
+/* Contenido inferior de la tarjeta (Botones y Líneas) */
+.card-footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+}
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+.decorative-lines {
+    width: 120px;
+    height: 1px;
+    background-color: var(--text-muted-color); 
+    margin-top: 1.25rem;
+    opacity: 0.7;
+}
+
+/* ★★★ SOLUCIÓN 2: NUEVO ESTILO PARA FLECHAS DEL CARRUSEL ★★★ */
+
+/* Estilo base para el contenedor circular de la flecha */
+#projectCarousel .carousel-control-prev,
+#projectCarousel .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    opacity: 0.85; /* Hacemos que sea un poco translúcido */
+    transition: all 0.3s ease;
+    border: none;
+}
+
+/* Estilo del ícono de la flecha (el SVG de Bootstrap) */
+#projectCarousel .carousel-control-prev-icon,
+#projectCarousel .carousel-control-next-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* --- TEMA CLARO: Fondo azul lumínico, flecha blanca --- */
+[data-theme="light"] #projectCarousel .carousel-control-prev,
+[data-theme="light"] #projectCarousel .carousel-control-next {
+    background-color: var(--primary-color); /* Azul */
+    box-shadow: 0 0 12px rgba(43, 104, 224, 0.7);
+}
+[data-theme="light"] #projectCarousel .carousel-control-prev-icon,
+[data-theme="light"] #projectCarousel .carousel-control-next-icon {
+    /* El ícono de Bootstrap es negro por defecto. Lo invertimos para hacerlo blanco. */
+    filter: invert(1) brightness(2); 
+}
+
+/* --- TEMA OSCURO: Fondo blanco lumínico, flecha negra --- */
+[data-theme="dark"] #projectCarousel .carousel-control-prev,
+[data-theme="dark"] #projectCarousel .carousel-control-next {
+    background-color: #f0f0f0; /* Blanco */
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+[data-theme="dark"] #projectCarousel .carousel-control-prev-icon,
+[data-theme="dark"] #projectCarousel .carousel-control-next-icon {
+    /* El ícono por defecto ya es negro, así que no necesita filtro. */
+    filter: none;
+}
+
+/* Efecto Hover para ambos temas */
+#projectCarousel .carousel-control-prev:hover,
+#projectCarousel .carousel-control-next:hover {
+    transform: translateY(-50%) scale(1.1); /* Crece un poco */
+    opacity: 1; /* Opacidad completa */
+}
+
+/* Indicadores (puntos de abajo) */
+#projectCarousel .carousel-indicators button {
+    background-color: var(--text-muted-color);
+    opacity: 0.5;
+}
+#projectCarousel .carousel-indicators .active {
+    background-color: var(--primary-color);
+    opacity: 1;
+}
+
+/* =================================================== */
+/* ====================== FOOTER ===================== */
+/* =================================================== */
 footer {
     background-color: var(--footer-bg);
     border-top: 1px solid var(--border-color);
@@ -178,129 +280,4 @@ footer {
 }
 section {
     animation: fadeIn 0.8s ease-in-out;
-}
-
-/* ============================================================== */
-/* === CÓDIGO PARA CORREGIR IMÁGENES Y ALINEACIÓN DE VIDEOS === */
-/* ============================================================== */
-
-/* Le da un color de fondo al contenedor por si la imagen no carga */
-.ratio {
-    background-color: var(--card-bg);
-}
-
-/* Asegura que la imagen llene el contenedor sin deformarse */
-.ratio img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Esta es la propiedad clave */
-}
-
-/* Mejora para el título de la sección */
-.section-title i {
-    margin-right: 10px;
-    color: var(--primary-color);
-}
-/* ========================================================= */
-/* === NUEVOS ESTILOS CORREGIDOS PARA PROYECTOS (BOTÓN Y CARRUSEL) === */
-/* ========================================================= */
-
-/* Contenedor para la parte inferior de la tarjeta (botón + líneas) */
-.card-footer-content {
-    display: flex;
-    flex-direction: column; /* Apila el botón y las líneas verticalmente */
-    align-items: center;   /* Centra los elementos */
-    padding-top: 1rem;     /* Espacio sobre el botón */
-}
-
-/* Las líneas decorativas, ahora DEBAJO del botón */
-.decorative-lines {
-    width: 120px; /* Ancho total de la línea */
-    height: 1px;
-    background-color: var(--text-color-secondary);
-    margin-top: 1.25rem; /* ★★★ Aumenté el espacio para bajarlas más ★★★ */
-    opacity: 0.7;
-}
-
-/* ==================================================================== */
-/* === ESTILOS DEFINITIVOS PARA PROYECTOS (MODO CLARO Y OSCURO) === */
-/* ==================================================================== */
-
-/* --- Contenido inferior de la tarjeta (Botones y Líneas) --- */
-.card-footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 1rem;
-}
-
-.button-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-}
-
-.decorative-lines {
-    width: 120px;
-    height: 1px;
-    /* Usamos una variable para que el color cambie con el tema */
-    background-color: var(--text-color-secondary); 
-    margin-top: 1.25rem;
-    opacity: 0.7;
-}
-
-/* --- Estilos del Carrusel Adaptativos --- */
-
-/* Flechas: Estilo base para el área clickeable */
-#projectCarousel .carousel-control-prev,
-#projectCarousel .carousel-control-next {
-    width: 50px;
-    height: 50px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.1); /* Fondo sutil para MODO CLARO */
-    border-radius: 50%;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-/* Icono de la flecha: por defecto es oscuro, perfecto para MODO CLARO */
-#projectCarousel .carousel-control-prev-icon,
-#projectCarousel .carousel-control-next-icon {
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-/* ★★★ AJUSTES ESPECÍFICOS PARA MODO OSCURO ★★★ */
-[data-theme="dark"] #projectCarousel .carousel-control-prev,
-[data-theme="dark"] #projectCarousel .carousel-control-next {
-    background-color: rgba(255, 255, 255, 0.08); /* Fondo sutil para MODO OSCURO */
-}
-[data-theme="dark"] #projectCarousel .carousel-control-prev-icon,
-[data-theme="dark"] #projectCarousel .carousel-control-next-icon {
-    filter: invert(1) opacity(0.7); /* Invierte el icono a blanco para MODO OSCURO */
-}
-
-/* Efecto Hover: se ilumina con el color primario */
-#projectCarousel .carousel-control-prev:hover,
-#projectCarousel .carousel-control-next:hover {
-    background-color: rgba(13, 110, 253, 0.2); 
-    box-shadow: 0 0 15px rgba(13, 110, 253, 0.7);
-}
-/* Efecto Hover del icono: se vuelve más grande y opaco */
-#projectCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
-#projectCarousel .carousel-control-next:hover .carousel-control-next-icon {
-    transform: scale(1.2);
-}
-[data-theme="dark"] #projectCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
-[data-theme="dark"] #projectCarousel .carousel-control-next:hover .carousel-control-next-icon {
-    filter: invert(1) opacity(1); /* Opacidad completa en hover de MODO OSCURO */
-}
-
-/* Indicadores (puntos de abajo) */
-#projectCarousel .carousel-indicators button {
-    background-color: var(--text-color-secondary); /* Usa variable para cambiar de color */
-    opacity: 0.5;
-}
-#projectCarousel .carousel-indicators .active {
-    opacity: 1;
 }
